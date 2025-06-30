@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 
