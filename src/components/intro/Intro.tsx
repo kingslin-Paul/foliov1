@@ -139,10 +139,10 @@ function Intro() {
       <div id="white-flash" className="absolute p-5 pt-16 bottom-[0%] z-[0] left-0 w-full h-[100dvh] flex items-center justify-center bg-mildWhite">
         <div className='flex justify-around items-center flex-col md:flex-row h-full  max-w-[1400px]'>
           <div id='white-content' className='opacity-0'>
-          <span className="text-2xl md:text-3xl lg:text-5xl font-bold mb-2">
-           <span className='text-secondaryColor'>Hi, I'm </span><span className="text-primaryColor font-onepiece uppercase text-[26px] md:4xl lg:text-6xl">Kingslin Paul</span>
+          <span className="text-[28px] md:text-[32px] lg:text-5xl font-bold mb-2">
+           <span className='text-secondaryColor'>Hi, I'm </span><span className="text-primaryColor font-onepiece uppercase text-[30px] md:text-4xl lg:text-6xl">Kingslin Paul</span>
           </span>
-            <span className="text-secondaryColor text-2xl md:text-3xl lg:text-5xl font-bold mb-4 xl:mb-6">
+            <span className="text-secondaryColor text-[28px] md:text-[32px] lg:text-5xl font-bold mb-4 xl:mb-6">
               <div id="intro-role" className="h-[40px] lg:h-[60px] overflow-hidden">
                 <div id="roleSlider" className="flex flex-col">
                   {roles.map((r, i) => (
@@ -151,7 +151,7 @@ function Intro() {
                 </div>
               </div>
             </span>
-            <p className="text-base font-medium text-ternaryColor md:text-lg max-w-xl">
+            <p className="text-lg font-medium text-ternaryColor md:text-xl xl:text-2xl max-w-xl">
               I craft modern web experiences using React.js, Tailwind CSS, and TypeScript. Passionate about clean UI, performance optimization, and seamless user interactions.
             </p>
 
