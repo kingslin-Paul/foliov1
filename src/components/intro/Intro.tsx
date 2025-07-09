@@ -13,9 +13,19 @@ const helloArray = [
   'Hola',
 ];
 
+
 function Intro() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loopFinished, setLoopFinished] = useState(false);
+  const [itemHeight, setItemHeight] = useState(60);
+
+
+  const roles =[
+    "Front-end Developer",
+    "JavaScript & TypeScript",
+    "React.js Developer",
+    "UI/UX Explorer"
+  ]
 
   function changeHeloOVer(){
     const tl=gsap.timeline({
@@ -39,11 +49,40 @@ function Intro() {
     y:"-100%"
   })
 
-    tl.to('#white-flash', {
-      bottom: 0,
+    tl.from('#white-flash', {
+      bottom: "-100%",
       duration: 0.5,
       ease: 'power2.inOut',
     });
+
+    tl.to("#typingImg",{
+      scale:1,
+      durration:0.7
+    },"-=0.2")
+    tl.to('#white-content', {
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power2.out',
+    });
+  
+  tl.call(() => {
+    const total = roles.length;
+    let current = 0;
+
+    const animate = () => {
+      gsap.to("#roleSlider", {
+        y: -itemHeight * current, // assuming 60px height
+        duration: 0.5,
+        ease: "power2.inOut",
+      });
+
+      current = (current + 1) % total;
+      setTimeout(animate, 2000); // 2s pause between roles
+    };
+
+    animate();
+  });
+
   
   }
   useEffect(() => {
@@ -75,128 +114,57 @@ function Intro() {
     }
   }, [loopFinished, currentIndex]);
 
+  useEffect(() => {
+  const updateItemHeight = () => {
+    if (window.innerWidth <= 768) {
+      setItemHeight(40);
+    } else {
+      setItemHeight(60);
+    }
+  };
+
+  // Call on mount
+  updateItemHeight();
+
+  // Optional: Listen to window resize too
+  window.addEventListener('resize', updateItemHeight);
+  return () => window.removeEventListener('resize', updateItemHeight);
+}, []);
+
   return (
     <div >
-      <div id="intro-black" className="w-full h-[100vh] flex items-center justify-center bg-mildBlack text-mildWhite text-2xl md:text-4xl font-mono">
+      <div id="intro-black" className="w-full h-[100vh] z-[100] relative flex items-center justify-center bg-mildBlack text-mildWhite text-2xl md:text-4xl font-mono">
         <span className='flex justify-start items-center gap-2 overflow-hidden'><div className='size-2.5 bg-mildWhite rounded-full dot'></div> <span className='dottext'>{helloArray[currentIndex]}</span></span>
       </div>
-      <div id="white-flash" className="absolute bottom-[-100%] left-0 w-full h-[100vh] bg-mildWhite"></div>
+      <div id="white-flash" className="absolute p-5 bottom-[0%] z-[0] left-0 w-full h-[100vh] flex items-center justify-center bg-mildWhite">
+        <div className='flex justify-around items-center flex-col md:flex-row h-full  max-w-[1400px]'>
+          <div id='white-content' className='opacity-0'>
+          <span className="text-2xl md:text-3xl lg:text-5xl font-bold mb-2">
+           <span className='text-secondaryColor'>Hi, I'm </span><span className="text-primaryColor font-onepiece uppercase text-[26px] md:4xl lg:text-6xl">Kingslin Paul</span>
+          </span>
+            <span className="text-secondaryColor text-2xl md:text-3xl lg:text-5xl font-bold mb-4 xl:mb-6">
+              <div id="intro-role" className="h-[40px] lg:h-[60px] overflow-hidden">
+                <div id="roleSlider" className="flex flex-col">
+                  {roles.map((r, i) => (
+                    <div key={i} className="h-[40px] lg:h-[60px] flex items-center">{r}</div>
+                  ))}
+                </div>
+              </div>
+            </span>
+            <p className="text-base font-medium text-ternaryColor md:text-lg max-w-xl">
+              I craft modern web experiences using React.js, Tailwind CSS, and TypeScript. Passionate about clean UI, performance optimization, and seamless user interactions.
+            </p>
+
+        </div>
+        <div>
+          <img id="typingImg" className='w-auto scale-150 sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px]' src='/assets/codeimg.png' />
+        </div>
+        </div>
+      </div>
+      <div className='w-full h-[100vh] bg-red-400'></div>
     </div>
 
   );
 }
 
 export default Intro;
-
-
-// import gsap from 'gsap';
-// import React, { useEffect, useState } from 'react';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// gsap.registerPlugin(ScrollTrigger);
-
-// const helloArray = [
-//   'Hello',
-//   'ನಮಸ್ಕಾರ',
-//   'வணக்கம்',
-//   'नमस्ते',
-//   'こんにちは',
-//   'Bonjour',
-//   'Hola',
-// ];
-
-// function Intro() {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [loopFinished, setLoopFinished] = useState(false);
-
-//   function playFinalAnimation() {
-//     const tl = gsap.timeline({ delay: 0.6 });
-
-//     // Step 1: Animate text and dot upward
-//     tl.to('.dottext', {
-//       y: -50,
-//       opacity: 0,
-//       duration: 0.35,
-//       ease: 'power2.out',
-//     });
-
-//     tl.to('.dot', {
-//       y: -50,
-//       opacity: 0,
-//       duration: 0.3,
-//       ease: 'power2.out',
-//     }, "-=0.25");
-
-//     // Step 2: Slide black screen up
-//     tl.to("#intro-black", {
-//       y: "-100%",
-//       duration: 0.5,
-//       ease: "power2.inOut",
-//     });
-
-//     // Step 3: Green panel rises from bottom
-//     tl.to(".coverUp", {
-//       y: "-100%",
-//       duration: 0.5,
-//       ease: "power2.inOut",
-//     },"-=1");
-
-//     // Step 4: White panel rises over green
-//     tl.to("#white-flash", {
-//       y: "0%",
-//       duration: 0.5,
-//       ease: "power2.inOut",
-//     });
-
-
-//   }
-
-//   useEffect(() => {
-//     if (!loopFinished) {
-//       if (currentIndex < helloArray.length - 1) {
-//         const timeout = setTimeout(() => {
-//           setCurrentIndex((prev) => prev + 1);
-//         }, 300);
-
-//         return () => clearTimeout(timeout);
-//       } else {
-//         const finalTimeout = setTimeout(() => {
-//           setCurrentIndex(0); // Show "Hello" again at end
-//           setLoopFinished(true);
-//         }, 300);
-
-//         return () => clearTimeout(finalTimeout);
-//       }
-//     }
-
-//     // Trigger exit animation once "Hello" is back
-//     if (loopFinished && currentIndex === 0) {
-//       const timer = setTimeout(() => {
-//         playFinalAnimation();
-//       }, 700); // Pause briefly before animating out
-//       return () => clearTimeout(timer);
-//     }
-
-//   }, [currentIndex, loopFinished]);
-
-//   return (
-//     <div className="relative w-full h-screen overflow-hidden">
-//       {/* Main black screen with Hello animation */}
-//       <div id="intro-black" className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-[#212121] text-[#DEDEDE] text-2xl md:text-4xl font-mono z-10">
-//         <span className="flex items-center gap-2 overflow-hidden">
-//           <div className="size-2.5 bg-[#DEDEDE] rounded-full dot"></div>
-//           <span className="dottext">{helloArray[currentIndex]}</span>
-//         </span>
-//       </div>
-
-//       {/* Green cover from bottom */}
-//       <div className="coverUp absolute bottom-[-100%] left-0 w-full h-full bg-[#2A1B3D] z-20"></div>
-
-//       {/* White flash cover */}
-//       <div id="white-flash" className="absolute top-0 left-0 w-full h-full bg-white z-30" style={{ transform: 'translateY(-100%)' }}></div>
-//     </div>
-//   );
-// }
-
-// export default Intro;
-
-

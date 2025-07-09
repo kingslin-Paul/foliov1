@@ -11,4 +11,14 @@ body {
   /* background-color: #212121;
   color:#DEDEDE */
   background-color: #2A1B3D;
+  /* overflow: auto;
+  scrollbar-width: none; */
 }
+
+@font-face {
+  font-family: 'OnePiece';
+  src: url('/fonts/OnePieceFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
