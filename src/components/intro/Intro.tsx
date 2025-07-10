@@ -157,7 +157,7 @@ function Intro() {
 
         </div>
         <div>
-          <img id="typingImg" className='w-auto scale-150 sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px]' src='/assets/codeimg.png' />
+          <img id="typingImg" className='w-auto scale-150 sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[600px]' src='/assets/codeimg.png' />
         </div>
         </div>
       </div>
