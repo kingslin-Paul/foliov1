@@ -10,6 +10,9 @@ module.exports = {
         secondaryColor:'#6e4c9b',
         ternaryColor:'#594573',
       },
+      screens: {
+        x: '1440px',
+      },
       fontFamily: {
         onepiece: ['OnePiece', 'sans-serif'],
       },

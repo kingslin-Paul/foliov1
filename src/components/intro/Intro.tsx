@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { useEffect, useState } from 'react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
+import './intro.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const helloArray = [
@@ -57,6 +58,7 @@ function Intro() {
 
     tl.to("#typingImg",{
       scale:1,
+      opacity:1,
       durration:0.7
     },"-=0.2")
     tl.to('#white-content', {
@@ -64,6 +66,7 @@ function Intro() {
       duration: 0.8,
       ease: 'power2.out',
     });
+
   
   tl.call(() => {
     const total = roles.length;
@@ -156,10 +159,20 @@ function Intro() {
             </p>
 
         </div>
-        <div>
-          <img id="typingImg" className='w-auto scale-150 sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[600px]' src='/assets/codeimg.png' />
+        <div id="typingImg" className="scale-150 opacity-0">
+          <div className='absolute top-[7%] right-[6%]'>
+            <div className='relative min-w-[100px] x:w-[150px]'>
+              <img className='size-[100px] x:size-[150px] gear1 absolute' alt='gear1' src='/assets/gear1.png' />
+              <img className='size-[100px] x:size-[150px] gear2 absolute top-[24px] x:top-[34px] left-[34px] x:left-[54px]' alt="gear2" src='/assets/gear1.png' />
+            </div>
+          </div>
+
+          <img className='w-auto sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[600px]' src='/assets/codeimg.png' />
         </div>
         </div>
+      </div>
+      <div className='bg-[#a88ced] size-10 rounded-full fixed top-6 right-9'>
+
       </div>
       <div className='w-full h-[100vh] bg-red-400'></div>
     </div>
