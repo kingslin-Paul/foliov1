@@ -5,7 +5,7 @@ import Intro from './components/intro/Intro'
 function App() {
 
   return (
-    <div className='overflow-x-auto'>
+    <div className='overflow-x-hidden'>
     <Intro />
     </div>
   )
