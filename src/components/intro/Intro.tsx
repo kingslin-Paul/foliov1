@@ -84,7 +84,12 @@ function Intro() {
     };
 
     animate();
-  });
+  },[],"-=1.5");
+
+  tl.from(".menu-btn",{
+    scale:0,
+    duration:0.5,
+  },)
 
   
   }
@@ -171,7 +176,7 @@ function Intro() {
         </div>
         </div>
       </div>
-      <div className='bg-[#a88ced] size-10 rounded-full fixed top-6 right-9'>
+      <div className='bg-[#a88ced] size-10 hover:size-11 transform transition-all duration-300 rounded-full fixed top-6 right-9 menu-btn'>
 
       </div>
       <div className='w-full h-[100vh] bg-red-400'></div>

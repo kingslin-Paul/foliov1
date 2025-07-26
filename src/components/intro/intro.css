@@ -4,6 +4,9 @@
 .gear2{
     animation: rotate-anti-clock 5s linear  infinite;
 }
+.menu-btn{
+    animation:floating 5s linear infinite;
+}
 
 @keyframes rotate {
     0%{
@@ -20,5 +23,20 @@
     }
     100%{
         rotate:-360deg
+    }
+}
+
+@keyframes floating {
+    0%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(5px,5px);
+    }
+    50%{
+        transform: translate(-5px,-5px);
+    }
+    100%{
+        transform: translate(0px,0px);
     }
 }
