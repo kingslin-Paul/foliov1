@@ -144,7 +144,7 @@ function Intro() {
       <div id="intro-black" className="w-full h-[100dvh] z-[100] relative flex items-center justify-center bg-mildBlack text-mildWhite text-2xl md:text-4xl font-mono">
         <span className='flex justify-center items-center gap-2 overflow-hidden w-[300px]'><div className='size-2.5 bg-mildWhite rounded-full dot'></div> <span className='dottext'>{helloArray[currentIndex]}</span></span>
       </div>
-      <div id="white-flash" className="absolute p-5 pt-16 bottom-[0%] z-[0] left-0 w-full h-[100dvh] flex items-center justify-center bg-mildWhite">
+      <div id="white-flash" className="absolute p-5 pt-16 bottom-[0%] z-[0] left-0 w-full h-[100vh] flex items-center justify-center bg-mildWhite">
         <div className='flex justify-around items-center flex-col md:flex-row h-full  max-w-[1400px]'>
           <div id='white-content' className='opacity-0'>
           <span className="text-[28px] md:text-[32px] lg:text-5xl font-bold mb-2">
