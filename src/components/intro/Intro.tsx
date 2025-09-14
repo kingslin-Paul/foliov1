@@ -144,9 +144,10 @@ useEffect(() => {
     document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
   };
   setVH();
+  // h-[calc(var(--vh)*100)]
   window.addEventListener("resize", setVH);
   return () => window.removeEventListener("resize", setVH);
-  // h-[calc(var(--vh)*100)]
+  
 }, []);
 
 
