@@ -146,12 +146,13 @@ useEffect(() => {
   setVH();
   window.addEventListener("resize", setVH);
   return () => window.removeEventListener("resize", setVH);
+  // h-[calc(var(--vh)*100)]
 }, []);
 
 
   return (
     <div >
-      <div id="intro-black" className="w-full h-[calc(var(--vh)*100)] z-[100] relative flex items-center justify-center bg-mildBlack text-mildWhite text-2xl md:text-4xl font-mono">
+      <div id="intro-black" className="w-full h-[100svh] z-[100] relative flex items-center justify-center bg-mildBlack text-mildWhite text-2xl md:text-4xl font-mono">
         <span className='flex justify-center items-center gap-2 overflow-hidden w-[300px]'><div className='size-2.5 bg-mildWhite rounded-full dot'></div> <span className='dottext'>{helloArray[currentIndex]}</span></span>
       </div>
       <div id="white-flash" className="absolute p-5 pt-16 bottom-0 z-[0] left-0 w-full h-[calc(var(--vh)*100)] flex items-center justify-center bg-mildWhite">
