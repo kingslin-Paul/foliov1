@@ -53,9 +53,9 @@ useEffect(() => {
             ref={(el) => {
               boxRef.current[index] = el;
             }}
-            className="tech-icon size-20 md:size-[80px] x:size-24 flex flex-col items-center justify-center rounded-xl shadow-lg bg-white dark:bg-[#2a2a2a] hover:scale-110 transition-transform duration-300 cursor-pointer"
+            className="tech-icon size-20 md:size-[80px] lg:size-[95px] x:size-24 flex flex-col items-center justify-center rounded-xl shadow-lg bg-white dark:bg-[#2a2a2a] hover:scale-110 transition-transform duration-300 cursor-pointer"
           >
-            <i className={`${tech.icon} ${tech.color} text-3xl md:text-4xl x:text-5xl`}></i>
+            <i className={`${tech.icon} ${tech.color} text-3xl md:text-4xl lg:text-5xl x:text-5xl`}></i>
             <p className="mt-1 md:mt-2 text-sm text-gray-700 dark:text-gray-300 font-bold">{tech.name}</p>
           </div>
         ))}

@@ -181,7 +181,15 @@ function Intro() {
       </div>
       
       <TechStack />
-      <div className='w-full h-[100vh] bg-red-100'></div>
+      <div className='w-full h-[100vh] bg-mildWhite flex justify-center items-center'>
+        <div className='flex justify-center items-center flex-col'>
+          <div className='relative'>
+          <img className='absolute sun z-0 size-20 lg:size-24 lg:top-6 lg:left-6' src='/assets/sun.png' alt='sun' />
+          <img className='relative z-10 w-[200px] lg:w-[300px]' src='/assets/underconstruction.png' alt='under-construction' />
+          </div>
+          <p>More content is on the way — this portfolio is actively being updated.</p>
+        </div>
+      </div>
     </div>
 
   );
