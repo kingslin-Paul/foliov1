@@ -19,7 +19,7 @@ function Education() {
         stagger: 0.3,
         scrollTrigger: {
           trigger: ".experience",
-          start: "top 70%",
+          start: "top 60%",
           end: "bottom 70%",
           scrub: true,
           markers: false,
