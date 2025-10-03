@@ -30,19 +30,23 @@ useEffect(() => {
       ease: "power1.out",
       scrollTrigger: {
         trigger: ".techstack",
-        start: "top center",
-        toggleActions: "play none none reverse",
+        start: "top 20%",
+        end: "bottom 90%",
+        scrub: true, 
+        markers: false,
       },
     }
   );
+
 }, []);
+
 
   return (
     <section className="w-full h-[100vh] py-20 relative flex justify-center items-center bg-mildWhite techstack">
       <img className='absolute max-w-[400px] top-0 right-0 z-0' src='/assets/binary.png' />
       <img className='absolute max-w-[400px] bottom-0 left-0 z-0' src='/assets/binary-2.png' />
       <div>
-      <h2 className="text-primaryColor z-[1] text-center text-[28px] md:text-[32px] lg:text-5xl font-bold mb-10 lg:mb-14">
+      <h2 className="text-primaryColor mytech z-[1] text-center text-3xl md:text-5xl lg:text-7xl font-bold mb-10 lg:mb-14">
          My Tech Stack & Skills
       </h2>
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
 import './intro.css'
 import TechStack from '../tech/Techstack';
+import Education from '../education/Education';
 gsap.registerPlugin(ScrollTrigger)
 
 const helloArray = [
@@ -10,17 +11,15 @@ const helloArray = [
   'ನಮಸ್ಕಾರ',
   'வணக்கம்',
   'नमस्ते',
-  'こんにちは',
-  'Bonjour',
-  'Hola',
+  'నమస్తే',
+  'નમસ્તે',
+  'ਸਤ ਸ੍ਰੀ ਅਕਾਲ',
 ];
-
 
 function Intro() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loopFinished, setLoopFinished] = useState(false);
   const [itemHeight, setItemHeight] = useState(60);
-
 
   const roles =[
     "Front-end Developer",
@@ -139,16 +138,7 @@ function Intro() {
   return () => window.removeEventListener('resize', updateItemHeight);
 }, []);
 
-useEffect(() => {
-  const setVH = () => {
-    document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
-  };
-  setVH();
-  // h-[calc(var(--vh)*100)]
-  window.addEventListener("resize", setVH);
-  return () => window.removeEventListener("resize", setVH);
-  
-}, []);
+
 
 
   return (
@@ -193,13 +183,14 @@ useEffect(() => {
       </div>
       
       <TechStack />
+      <Education />
       <div className='w-full h-[100vh] bg-mildWhite flex justify-center items-center'>
         <div className='flex justify-center items-center flex-col'>
           <div className='relative'>
           <img className='absolute sun z-0 size-20 lg:size-24 lg:top-6 lg:left-6' src='/assets/sun.png' alt='sun' />
           <img className='relative z-10 w-[200px] lg:w-[300px]' src='/assets/underconstruction.png' alt='under-construction' />
           </div>
-          <p>More content is on the way — this portfolio is actively being updated.</p>
+          <p>this portfolio is actively being updated.</p>
         </div>
       </div>
     </div>
