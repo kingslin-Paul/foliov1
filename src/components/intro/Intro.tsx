@@ -20,6 +20,7 @@ function Intro() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loopFinished, setLoopFinished] = useState(false);
   const [itemHeight, setItemHeight] = useState(60);
+  const [showToast, setShowToast] = useState(false);
 
   const roles =[
     "Front-end Developer",
@@ -90,6 +91,10 @@ function Intro() {
     opacity:1,
   },)
 
+  tl.to(".footerMyCustom",{
+    opacity:1,
+  })
+
   
   }
   useEffect(() => {
@@ -139,6 +144,12 @@ function Intro() {
 }, []);
 
 
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("kingslinpaul7@gmail.com");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  };
+
 
 
   return (
@@ -146,7 +157,7 @@ function Intro() {
       <div id="intro-black" className="w-full h-[100svh] z-[100] relative flex items-center justify-center bg-mildBlack text-mildWhite text-2xl md:text-4xl font-mono">
         <span className='flex justify-center items-center gap-2 overflow-hidden w-[300px]'><div className='size-2.5 bg-mildWhite rounded-full dot'></div> <span className='dottext'>{helloArray[currentIndex]}</span></span>
       </div>
-      <div id="white-flash" className="absolute p-5 pt-16 bottom-0 z-[0] left-0 w-full h-[100svh] flex items-center justify-center bg-mildWhite">
+      <div id="white-flash" className="absolute p-5 pt-16 bottom-0 z-[1] left-0 w-full h-[100svh] flex items-center justify-center bg-mildWhite">
         <div className='flex justify-around items-center flex-col md:flex-row h-full  max-w-[1400px]'>
           <div id='white-content' className='opacity-0'>
           <span className="text-[28px] md:text-[32px] lg:text-5xl font-bold mb-2">
@@ -184,7 +195,7 @@ function Intro() {
       
       <TechStack />
       <Education />
-      <div className='w-full h-[100vh] bg-mildWhite flex justify-center items-center'>
+      {/* <div className='w-full h-[100vh] bg-mildWhite flex justify-center items-center'>
         <div className='flex justify-center items-center flex-col'>
           <div className='relative'>
           <img className='absolute sun z-0 size-20 lg:size-24 lg:top-6 lg:left-6' src='/assets/sun.png' alt='sun' />
@@ -192,6 +203,82 @@ function Intro() {
           </div>
           <p>this portfolio is actively being updated.</p>
         </div>
+      </div> */}
+      <div className='h-[300px] footerMyCustom opacity-0 fixed bottom-0 w-full z-[]'>
+        <p className='text-mildWhite text-center pt-10 text-2xl font-light'>Kingslin | Portfolio</p>
+        <footer className="py-10">
+  <div className="flex gap-8 justify-center">
+    {/* GitHub */}
+    <a
+      href="https://github.com/kingslin-Paul"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center justify-center size-20 md:size-[80px] lg:size-[90px] 
+                 rounded-xl  hover:bg-[#44336d] transition-all duration-200 cursor-pointer 
+                 hover:scale-110 relative group"
+    >
+      <i className="fab fa-github text-white text-xl md:text-2xl lg:text-3xl"></i>
+      <p className="mt-2 text-xs text-gray-300 font-semibold">GitHub</p>
+      <i className="fas fa-arrow-up-right-from-square text-blue-400 text-xs absolute opacity-0 transition-opacity duration-300 group-hover:opacity-50 top-2 right-2"></i>
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/in/kingslin-paul-075a27230/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center justify-center size-20 md:size-[80px] lg:size-[90px] 
+                 rounded-xl hover:bg-[#44336d] transition-all duration-200 cursor-pointer 
+                 hover:scale-110 relative group"
+    >
+      <i className="fab fa-linkedin text-blue-400 text-xl md:text-2xl lg:text-3xl"></i>
+      <p className="mt-2 text-xs text-gray-300 font-semibold">LinkedIn</p>
+      <i className="fas fa-arrow-up-right-from-square text-blue-400 text-xs absolute opacity-0 transition-opacity duration-300 group-hover:opacity-50 top-2 right-2"></i>
+    </a>
+
+    {/* Instagram */}
+    {/* <a
+      href="https://instagram.com/yourusername"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center justify-center size-20 md:size-[80px] lg:size-[90px] 
+                 rounded-xl hover:bg-[#44336d] transition-all duration-200 cursor-pointer 
+                 hover:scale-110 relative group"
+    >
+      <i className="fab fa-instagram text-pink-400 text-xl md:text-2xl lg:text-3xl"></i>
+      <p className="mt-2 text-xs text-gray-300 font-semibold">Instagram</p>
+      <i className="fas fa-arrow-up-right-from-square text-blue-400 text-xs absolute opacity-0 transition-opacity duration-300 group-hover:opacity-50 top-2 right-2"></i>
+    </a> */}
+
+    {/* Email */}
+      <a
+      onClick={handleCopyEmail}
+        className="flex flex-col items-center justify-center size-20 md:size-[80px] lg:size-[90px] 
+                  rounded-xl hover:bg-[#44336d] transition-all duration-300 cursor-pointer 
+                  hover:scale-110 relative group"
+      >
+        <i className="fas fa-envelope text-yellow-400 text-xl md:text-2xl lg:text-3xl"></i>
+        <p className="mt-2 text-xs text-gray-300 font-semibold">Email</p>
+        <i className="fas fa-copy text-blue-400 text-xs absolute opacity-0 transition-opacity duration-300 group-hover:opacity-50 top-2 right-2"></i>
+      </a>
+
+      {/* Snackbar */}
+      {showToast && (
+        <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg shadow-lg animate-fade-in-out">
+          Email copied!
+        </div>
+      )}
+
+  </div>
+
+  <p className="text-center text-gray-400 mt-8 text-sm">
+    © {new Date().getFullYear()} Kingslin Paul. All rights reserved.
+  </p>
+</footer>
+
+      </div>
+      <div className='h-[300px]'>
+
       </div>
     </div>
 

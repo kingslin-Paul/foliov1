@@ -42,7 +42,7 @@ useEffect(() => {
 
 
   return (
-    <section className="w-full h-[100vh] py-20 relative flex justify-center items-center bg-mildWhite techstack">
+    <section className="w-full z-[2] h-[100vh] py-20 relative flex justify-center items-center bg-mildWhite techstack">
       <img className='absolute max-w-[400px] top-0 right-0 z-0' src='/assets/binary.png' />
       <img className='absolute max-w-[400px] bottom-0 left-0 z-0' src='/assets/binary-2.png' />
       <div>

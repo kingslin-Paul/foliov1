@@ -1,0 +1,36 @@
+.floating-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* behind content */
+  background: #DEDEDE; /* matches your site background */
+}
+
+.floating-background span {
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  /* gradient using theme colors */
+  background: linear-gradient(45deg, #212121, transparent);
+  top: 100%;
+  left: 0;
+  opacity: 0.6;
+  transform: rotate(45deg);
+  animation: meteoroid 3s linear infinite;
+}
+
+/* Add variety in position, speed, color */
+.floating-background span:nth-child(1) { left: 5%;  animation-duration: 2.5s; background: linear-gradient(45deg, #2A1B3D, transparent); }
+.floating-background span:nth-child(2) { left: 25%; animation-duration: 3s;   background: linear-gradient(45deg, #6e4c9b, transparent); }
+.floating-background span:nth-child(3) { left: 45%; animation-duration: 3.5s; background: linear-gradient(45deg, #212121, transparent); }
+.floating-background span:nth-child(4) { left: 65%; animation-duration: 4s;   background: linear-gradient(45deg, #594573, transparent); }
+.floating-background span:nth-child(5) { left: 85%; animation-duration: 3s;   background: linear-gradient(45deg, #2A1B3D, transparent); }
+
+@keyframes meteoroid {
+  0%   { transform: translate(0, 0) rotate(45deg); opacity: 0; }
+  30%  { opacity: 1; }
+  100% { transform: translate(-100vw, -100vh) rotate(45deg); opacity: 0; }
+}

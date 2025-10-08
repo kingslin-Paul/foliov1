@@ -29,7 +29,7 @@ function Education() {
   }, []);
 
   return (
-    <section className="w-full py-5 lg:p-0 min-h-[100vh] flex flex-col justify-center items-center gap-10 bg-mildWhite experience">
+    <section className="w-full z-[2] relative py-5 lg:p-0 min-h-[100vh] flex flex-col justify-center items-center gap-10 bg-mildWhite experience rounded-b-[32px]">
         <div>
             <h2 className="text-primaryColor mytech z-[1] text-center text-3xl md:text-5xl lg:text-7xl font-bold mb-10 lg:mb-14">Professional Experience</h2>
         </div>
