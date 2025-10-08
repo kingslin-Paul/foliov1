@@ -1,5 +1,4 @@
 
-import './floatingcss.css'
 
 function Floatingcss() {
   return (
