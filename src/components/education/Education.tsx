@@ -35,7 +35,7 @@ function Education() {
         </div>
         <div className='flex flex-col lg:flex-row gap-5 px-5'>
             <div className='exp-card flex flex-col max-w-xl bg-white text-black p-6 relative'>
-                <img src='/assets/red-ribbon.png' className='w-20 md:w-[100px] absolute top-[-11px] right-[-11px]'/>
+                <img src='/assets/red-ribbon.png' className='w-[60px] md:w-[100px] absolute top-[-6px] md:top-[-11px] right-[-6px] md:right-[-11px]'/>
                 <span className='text-xs font-medium md:text-sm xl:text-base'>Jul 2024 – Present</span>
                 <span className='text-base font-medium md:text-xl xl:text-2xl'>Frontend Developer — Payfin</span>
                 <p className='text-xs font-medium md:text-sm xl:text-base'>Fintech Product Company</p>
@@ -50,7 +50,7 @@ function Education() {
             </div>
 
             <div className='exp-card flex flex-col max-w-xl bg-white text-black p-6 relative'>
-                <img src='/assets/red-ribbon.png' className='w-20 w-[100px] absolute top-[-11px] right-[-11px]'/>
+                <img src='/assets/red-ribbon.png' className='w-[60px] md:w-[100px] absolute top-[-6px] md:top-[-11px] right-[-6px] md:right-[-11px]'/>
                 <span className='text-xs font-medium md:text-sm xl:text-base'>Jun 2023 – Jan 2024</span>
                 <span className='text-base font-medium md:text-xl xl:text-2xl'>Software Engineer — Greenmen Consulting</span>
                 <ul className="list-disc pl-4 text-xs md:text-sm xl:text-base mt-3 space-y-2">
