@@ -189,7 +189,7 @@ function Intro() {
         </div>
         </div>
       </div>
-      <div className='bg-[#a88ced] size-10 hover:size-11 opacity-0 transform transition-all duration-300 rounded-full fixed top-6 z-[50] right-9 menu-btn'>
+      <div className='bg-[#a88ced] size-10 hover:size-11 opacity-0 transform transition-all duration-300 rounded-full fixed top-6 z-[50] right-9 menu-btn hidden'>
 
       </div>
       
