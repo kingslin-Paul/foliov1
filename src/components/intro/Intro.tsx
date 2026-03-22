@@ -160,9 +160,9 @@ function Intro() {
       <div id="white-flash" className="absolute p-5 pt-16 bottom-0 z-[1] left-0 w-full h-[100svh] flex items-center justify-center bg-mildWhite">
         <div className='flex justify-around items-center flex-col md:flex-row h-full  max-w-[1400px]'>
           <div id='white-content' className='opacity-0'>
-          <span className="text-[28px] md:text-[32px] lg:text-5xl font-bold mb-2">
+          <h1 className="text-[28px] md:text-[32px] lg:text-5xl font-bold mb-2">
            <span className='text-secondaryColor'>Hi, I'm </span><span className="text-primaryColor font-onepiece uppercase text-[30px] md:text-4xl lg:text-6xl">Kingslin Paul</span>
-          </span>
+          </h1>
             <span className="text-secondaryColor text-[28px] md:text-[32px] lg:text-5xl font-bold mb-4 xl:mb-6">
               <div id="intro-role" className="h-[40px] lg:h-[60px] overflow-hidden">
                 <div id="roleSlider" className="flex flex-col">
@@ -170,6 +170,7 @@ function Intro() {
                     <div key={i} className="h-[40px] lg:h-[60px] flex items-center">{r}</div>
                   ))}
                 </div>
+                <p className="sr-only">Front-end Developer, JavaScript & TypeScript, React.js, Angular, UI/UX Explorer</p>
               </div>
             </span>
             <p className="text-lg font-medium text-ternaryColor md:text-xl xl:text-2xl max-w-xl">
